@@ -17,3 +17,9 @@ variable "profile_name" {
   type = string
   description = "This is the AWS configure profile that is used to deploy infrastructure"
 }
+
+variable "availability_zones" {
+  type = list(string)
+  default = [ "us-east-1a", "us-east-1b" ]
+  description = "Availability Zones for the VPC created for EKS "
+}

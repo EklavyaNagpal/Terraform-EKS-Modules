@@ -4,9 +4,9 @@
 terraform {
   backend "s3" {
     region = "us-east-1"
-    bucket = "backend-terraform-eks-modules"
+    bucket = "backend1-terraform-eks-modules"
     key = "eks_backend/terraform.tfstate"
     dynamodb_table = "eks-terraform-lock-01"
-    use_lockfile = true // This pararmeter is used because dynamodb_table is deprecated, still to use that we need to pass this parameter
+   # use_lockfile = true // This pararmeter is used because dynamodb_table is deprecated, still to use that we need to pass this parameter
   }
 }
