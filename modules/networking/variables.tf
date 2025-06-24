@@ -18,12 +18,8 @@ variable "availability_zones" {
   description = "Availability Zones for the VPC created for EKS "
 }
 
-# variable "public_subnets_eks" {
-#   type = list(string)
-#   default = [ "10.0.1.0/28", "10.0.2.0/28" ]
-# }
-
-# variable "private_subnets_eks" {
-#   type = list(string)
-#   default = [ "10.0.11.0/28", "10.0.12.0/28" ]
-# }
+variable "destination_cidr_block" {
+  type = string
+  default = "0.0.0.0/0"
+  description = "This defines the destination for a route in a route table. Any traffic going outside the VPC, route it to the Internet Gateway"
+}
